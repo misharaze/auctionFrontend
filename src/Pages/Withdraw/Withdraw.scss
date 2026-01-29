@@ -1,0 +1,124 @@
+.withdraw-page {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 16px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+}
+
+.withdraw-card {
+  background: linear-gradient(180deg, #111, #0b0b0b);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  .block {
+    margin-bottom: 24px;
+  }
+
+  .block-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 12px;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #0e0e0e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: #ffb703;
+    }
+  }
+
+  .methods,
+  .quick-amounts {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    button {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #121212;
+      color: #ddd;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #1a1a1a;
+      }
+
+      &.active {
+        background: #ffb703;
+        color: #000;
+        border-color: transparent;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 12px;
+    background: #0f0f0f;
+    margin-bottom: 16px;
+
+    span {
+      color: #aaa;
+    }
+
+    strong {
+      font-size: 18px;
+      color: #ffb703;
+    }
+  }
+
+  .alert {
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+
+    &.error {
+      background: rgba(255, 0, 0, 0.12);
+      color: #ff6b6b;
+    }
+
+    &.success {
+      background: rgba(0, 255, 140, 0.12);
+      color: #4dffb2;
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    background: #ffb703;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

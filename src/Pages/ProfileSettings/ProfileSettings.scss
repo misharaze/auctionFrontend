@@ -1,0 +1,86 @@
+.settings-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  color: #fff;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.settings-card {
+  background: #0f1115;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  form {
+    display: grid;
+    gap: 12px;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  input {
+    background: #12141a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 10px;
+    color: #fff;
+  }
+
+  &.danger {
+    border-color: rgba(255,80,80,0.4);
+  }
+}
+
+.toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+
+  &.primary {
+    background: #ffb703;
+    color: #000;
+  }
+
+  &.danger {
+    background: #ff4d4d;
+    color: #fff;
+  }
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+
+  &.success {
+    background: rgba(50,200,120,0.15);
+  }
+
+  &.error {
+    background: rgba(255,80,80,0.15);
+  }
+}

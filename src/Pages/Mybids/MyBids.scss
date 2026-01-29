@@ -1,0 +1,113 @@
+.my-bids-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* HEAD */
+.page-head {
+  margin-bottom: 16px;
+}
+
+.page-head h1 {
+  margin: 0;
+}
+
+.page-subtitle {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+/* FILTERS */
+.bids-filters {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.filter {
+  background: #1a1b1f;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.filter.is-active,
+.filter:hover {
+  opacity: 1;
+  background: #ffb703;
+  color: #000;
+}
+
+/* TABLE */
+.bids-table {
+  background: #0e0f12;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.bids-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: center;
+  font-size: 14px;
+}
+
+.bids-row:last-child {
+  border-bottom: none;
+}
+
+.bids-row--head {
+  background: #15161a;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.bids-row .item {
+  font-weight: 500;
+}
+
+/* RESULTS */
+.bids-row--win .result {
+  color: #4ade80;
+}
+
+.bids-row--paid .result {
+  color: #ff6b6b;
+}
+
+.bids-row--lose .result {
+  color: #9ca3af;
+}
+
+.date {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  background: #1a1b1f;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

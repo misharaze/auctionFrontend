@@ -1,0 +1,151 @@
+.auth-page {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+/* ---------- Card ---------- */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 18px;
+  border-radius: 22px;
+  background: radial-gradient(
+      600px 200px at 20% 0%,
+      rgba(255, 184, 0, 0.12),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 14px;
+}
+
+/* ---------- Tabs ---------- */
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+
+  button {
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: 900;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(234, 234, 234, 0.8);
+    transition: 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    &.is-active {
+      background: rgba(255, 184, 0, 0.18);
+      color: #ffb800;
+    }
+  }
+}
+
+/* ---------- Titles ---------- */
+.auth-title {
+  margin: 4px 0 0;
+  font-size: 22px;
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+  display: grid;
+  gap: 10px;
+
+  input {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #eaeaea;
+    outline: none;
+    font-size: 14px;
+
+    &:focus {
+      border-color: rgba(255, 184, 0, 0.28);
+    }
+  }
+}
+
+.auth-submit {
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffb800, #ff8800);
+  color: #000;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+/* ---------- Divider ---------- */
+.auth-divider {
+  position: relative;
+  text-align: center;
+  margin: 6px 0;
+
+  span {
+    padding: 0 10px;
+    font-size: 12px;
+    opacity: 0.6;
+    background: #0d0f14;
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ---------- Steam ---------- */
+.steam-btn {
+  padding: 14px;
+  border-radius: 16px;
+  background: #171a21;
+  color: #fff;
+  font-weight: 900;
+  transition: 0.2s;
+
+  &:hover {
+    background: #1f232c;
+  }
+}
+
+/* ---------- Note ---------- */
+.auth-note {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.65;
+  line-height: 1.45;
+
+  b {
+    color: #ff4d4f;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 900px) {
+  .auth-card {
+    padding: 22px;
+  }
+
+  .auth-title {
+    font-size: 24px;
+  }
+}

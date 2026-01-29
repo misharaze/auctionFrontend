@@ -1,0 +1,307 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #0e0f12;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.site-header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 190px;
+
+  &__mark {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background: #ffb800;
+    box-shadow: 0 0 0 6px rgba(255, 184, 0, 0.12);
+  }
+
+  &__text {
+    display: grid;
+    line-height: 1.05;
+  }
+
+  &__name {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #eaeaea;
+  }
+
+  &__tag {
+    font-size: 12px;
+    opacity: 0.65;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  overflow: auto;
+
+  &__link {
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: rgba(234, 234, 234, 0.78);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+    }
+
+    &.is-active {
+      background: rgba(255, 184, 0, 0.14);
+      color: #ffb800;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #eaeaea;
+
+  &__label {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  &__value {
+    font-weight: 700;
+    color: #ffb800;
+  }
+}
+
+.auth-btn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffb800, #ff8800);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 820px) {
+  .brand__tag {
+    display: none;
+  }
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 64px;
+  white-space: nowrap;
+}
+
+/* =========================
+   BRAND
+========================= */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffb800;
+}
+
+.brand__name {
+  font-weight: 700;
+}
+
+.brand__tag {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.nav__link {
+  font-size: 14px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.nav__link.is-active {
+  color: #fff;
+}
+
+/* =========================
+   ACTIONS (RIGHT)
+========================= */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   BALANCE CHIP
+========================= */
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #14161b;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* =========================
+   AUTH BUTTON
+========================= */
+.auth-btn {
+  background: #ffb800;
+  color: #000;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =========================
+   USER MINI PROFILE
+========================= */
+.user-mini {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-mini__main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #14161b;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.user-mini__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffb800;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.user-mini__name {
+  font-size: 13px;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.user-mini__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  background: #111319;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.15s ease;
+}
+
+.user-mini__dropdown a,
+.user-mini__dropdown button {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #ddd;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.user-mini__dropdown a:hover,
+.user-mini__dropdown button:hover {
+  background: #1a1d24;
+  color: #fff;
+}
+
+.user-mini__dropdown button {
+  color: #ff6464;
+}
+
+/* =========================
+   LIVE ACTIVITY
+========================= */
+.header-live {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+  .nav {
+    display: none;
+  }
+}

@@ -1,0 +1,400 @@
+.home {
+  display: grid;
+  gap: 18px;
+}
+
+/* -------- Buttons (локально для Home, позже вынесем в components/ui) -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s ease;
+  user-select: none;
+
+  &--primary {
+    background: linear-gradient(135deg, #ffb800, #ff8800);
+    color: #000;
+  }
+
+  &--ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #eaeaea;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.09);
+    }
+  }
+}
+
+/* -------- Hero -------- */
+.home-hero {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  background: radial-gradient(
+      900px 240px at 20% 0%,
+      rgba(255, 184, 0, 0.12),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  &__title {
+    font-size: 30px;
+    line-height: 1.12;
+    letter-spacing: -0.3px;
+    margin: 0;
+
+    span {
+      display: block;
+      color: #ff4d4f;
+      margin-top: 4px;
+    }
+  }
+
+  &__subtitle {
+    margin: 10px 0 0;
+    opacity: 0.74;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  &__cta {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  &__panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-top: 4px;
+  }
+}
+
+/* Hero stats */
+.stat {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 12px;
+
+  &__label {
+    font-size: 12px;
+    opacity: 0.65;
+  }
+
+  &__value {
+    display: block;
+    margin-top: 4px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+  }
+
+  &--danger {
+    .stat__value {
+      color: #ff4d4f;
+    }
+  }
+}
+
+/* -------- Sections -------- */
+.home-section {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  &--soft {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+  }
+
+  &__link {
+    color: rgba(234, 234, 234, 0.7);
+    text-decoration: none;
+
+    &:hover {
+      color: #ffb800;
+    }
+  }
+}
+
+/* -------- Auctions strip -------- */
+.auction-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 72%;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+
+  /* nicer scrolling */
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+}
+
+.auction-tile {
+  scroll-snap-align: start;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #eaeaea;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 184, 0, 0.18);
+  }
+
+  &__top {
+    position: relative;
+  }
+
+  &__img {
+    height: 98px;
+    border-radius: 14px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+  }
+
+  &__time {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-weight: 800;
+    color: #ffb800;
+    font-size: 12px;
+  }
+
+  &__title {
+    font-weight: 800;
+    letter-spacing: 0.15px;
+    font-size: 14px;
+  }
+
+  &__meta {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__hint {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  &__k {
+    opacity: 0.68;
+    font-size: 12px;
+  }
+
+  &__v {
+    font-weight: 800;
+  }
+
+  &--danger {
+    .meta-row__v {
+      color: #ff4d4f;
+    }
+  }
+}
+
+/* -------- Steps -------- */
+.steps {
+  display: grid;
+  gap: 10px;
+}
+
+.step {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  &__n {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    background: rgba(255, 184, 0, 0.14);
+    color: #ffb800;
+  }
+
+  &__t {
+    margin-top: 10px;
+    font-weight: 800;
+  }
+
+  &__d {
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: 0.72;
+    line-height: 1.45;
+  }
+
+  &--danger {
+    border-color: rgba(255, 77, 79, 0.18);
+
+    .step__n {
+      background: rgba(255, 77, 79, 0.14);
+      color: #ff4d4f;
+    }
+  }
+}
+
+/* -------- Feed -------- */
+.feed {
+  display: grid;
+  gap: 10px;
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  &__dot {
+    margin-top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 184, 0, 0.9);
+    box-shadow: 0 0 0 6px rgba(255, 184, 0, 0.12);
+    flex: 0 0 auto;
+  }
+
+  &__text {
+    font-size: 13px;
+    opacity: 0.78;
+    line-height: 1.45;
+  }
+}
+
+/* ------------------ Responsive ------------------ */
+@media (min-width: 600px) {
+  .home-hero__cta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .auction-strip {
+    grid-auto-columns: 48%;
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: start;
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+    }
+
+    &__panel {
+      padding-top: 8px;
+    }
+  }
+
+  .auction-strip {
+    grid-auto-columns: 30%;
+  }
+}
+.auction-tile {
+  background: linear-gradient(180deg, #151515, #0d0d0d);
+  border-radius: 16px;
+  padding: 14px;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 1px #f5b30155;
+  }
+
+  &__img {
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  &__prices {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+
+    .danger {
+      color: #ff4d4f;
+    }
+  }
+
+  &__time {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+}

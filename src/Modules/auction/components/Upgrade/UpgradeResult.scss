@@ -1,0 +1,50 @@
+.upgrade-result {
+  padding: 16px;
+  border-radius: 18px;
+  text-align: center;
+
+  font-weight: 900;
+  letter-spacing: 0.3px;
+
+  animation: pop 0.25s ease;
+
+  &.success {
+    background: rgba(46, 204, 113, 0.12);
+    border: 1px solid rgba(46, 204, 113, 0.35);
+    color: #2ecc71;
+  }
+
+  &.fail {
+    background: rgba(255, 77, 79, 0.12);
+    border: 1px solid rgba(255, 77, 79, 0.35);
+    color: #ff4d4f;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.upgrade-result {
+  animation: popIn 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

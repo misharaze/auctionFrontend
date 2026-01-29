@@ -1,0 +1,123 @@
+.tournaments-page {
+  padding: 32px 24px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tournaments-head {
+  background: linear-gradient(180deg, #1a1c1f, #121417);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+
+  p {
+    color: #9aa0a6;
+    font-size: 14px;
+  }
+}
+
+.tournament-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.tournament-card {
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 204, 0, 0.06),
+    #121417 70%
+  );
+  border-radius: 18px;
+  padding: 22px;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.45);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px rgba(255, 204, 0, 0.25),
+      0 20px 50px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.tournament-card__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.tournament-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.tournament-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &::before {
+    content: "●";
+    margin-right: 6px;
+  }
+}
+
+/* 🟢 Активен */
+.tournament-status:contains("Активен") {
+  color: #1ecb6b;
+  background: rgba(30, 203, 107, 0.15);
+}
+
+/* 🟡 Регистрация */
+.tournament-status:contains("Регистрация") {
+  color: #ffcc00;
+  background: rgba(255, 204, 0, 0.15);
+}
+
+.tournament-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: #b0b6bd;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.btn.ghost {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 204, 0, 0.4);
+  color: #ffcc00;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 204, 0, 0.12);
+    color: #fff;
+  }
+}

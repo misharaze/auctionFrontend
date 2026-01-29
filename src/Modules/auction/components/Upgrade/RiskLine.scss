@@ -1,0 +1,29 @@
+.riskline-wrapper {
+  margin: 24px 0;
+}
+
+.riskline-bar {
+  height: 10px;
+  background: #1a1a1a;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.riskline-success {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #1aff8c,
+    #ffd24d
+  );
+  transition: width .4s ease;
+}
+
+.riskline-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  opacity: .7;
+  margin-top: 6px;
+}

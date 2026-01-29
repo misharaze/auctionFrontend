@@ -1,0 +1,138 @@
+.inventory-page {
+  display: grid;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ---------- Head ---------- */
+.inventory-head {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inventory-title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.inventory-subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* ---------- Filters ---------- */
+.inventory-filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+
+  button {
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(234, 234, 234, 0.8);
+    white-space: nowrap;
+    transition: 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &.is-active {
+      background: rgba(255, 184, 0, 0.18);
+      color: #ffb800;
+      font-weight: 800;
+    }
+  }
+}
+
+/* ---------- List ---------- */
+.inventory-list {
+  display: grid;
+  gap: 10px;
+}
+
+/* ---------- Row ---------- */
+.inventory-row {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: 900;
+    letter-spacing: 0.15px;
+  }
+
+  &__price {
+    font-weight: 800;
+    color: #ffb800;
+    white-space: nowrap;
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  &.locked {
+    opacity: 0.6;
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  padding: 10px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 13px;
+
+  &.primary {
+    background: linear-gradient(135deg, #ffb800, #ff8800);
+    color: #000;
+  }
+
+  &.ghost {
+    background: rgba(255, 255, 255, 0.06);
+    color: #eaeaea;
+  }
+}
+
+.locked-label {
+  font-size: 12px;
+  opacity: 0.7;
+  color: #ff4d4f;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 700px) {
+  .inventory-row {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    &__actions {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .inventory-title {
+    font-size: 26px;
+  }
+}

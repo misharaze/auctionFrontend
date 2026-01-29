@@ -1,0 +1,83 @@
+.deposit-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  color: #fff;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.deposit-card {
+  background: #0f1115;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  h2 {
+    margin-bottom: 12px;
+  }
+}
+
+.methods,
+.amounts {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  button {
+    background: #12141a;
+    border-radius: 999px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    cursor: pointer;
+
+    &.active {
+      background: #ffb703;
+      color: #000;
+      font-weight: 800;
+    }
+
+    span {
+      margin-left: 6px;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  margin-top: 10px;
+  background: #12141a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 10px;
+  color: #fff;
+}
+
+.summary {
+  margin-top: 12px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .total {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 8px;
+    font-size: 18px;
+    color: #ffb703;
+  }
+}
+
+.btn.full {
+  width: 100%;
+  margin-top: 14px;
+}

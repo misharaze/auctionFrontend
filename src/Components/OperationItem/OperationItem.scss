@@ -1,0 +1,32 @@
+.op {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #141414;
+
+  &--plus {
+    border-left: 3px solid #2aff95;
+    color: #2aff95;
+  }
+
+  &--minus {
+    border-left: 3px solid #ff5a5a;
+    color: #ff5a5a;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  }
+
+  &__amount {
+    font-weight: 600;
+  }
+}

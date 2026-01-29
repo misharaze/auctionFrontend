@@ -1,0 +1,126 @@
+.profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* USER CARD */
+.profile-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: radial-gradient(120% 120% at 0% 0%, #2a2416, #0b0c0f);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.profile-card__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffb703;
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info h2 {
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.badge {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: #1e1f23;
+}
+
+.badge--role {
+  background: #2c2f36;
+}
+
+.badge--risk.high {
+  background: #3a1616;
+  color: #ff6b6b;
+}
+
+.badge--risk.medium {
+  background: #332a16;
+  color: #ffb703;
+}
+
+.profile-card__right {
+  text-align: right;
+}
+
+.balance span {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.balance strong {
+  display: block;
+  font-size: 24px;
+  color: #ffb703;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* STATS */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat {
+  background: #121316;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.stat span {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+.stat--danger strong {
+  color: #ff6b6b;
+}
+
+/* RISK INSIGHT */
+.risk-insight {
+  background: linear-gradient(90deg, #3a1616, #1a0e0e);
+  border-radius: 12px;
+  padding: 16px;
+  color: #ffb3b3;
+  font-size: 14px;
+}
