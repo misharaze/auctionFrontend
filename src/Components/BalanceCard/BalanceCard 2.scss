@@ -1,0 +1,25 @@
+.balance-card {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: grid;
+  gap: 12px;
+}
+
+.balance-card__label {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.balance-card__value {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+.balance-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

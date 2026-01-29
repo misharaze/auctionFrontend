@@ -22,7 +22,7 @@ const { setUserBalance } = useAuthStore();
         setOperations(ops);
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [setUserBalance]);
 
   if (loading) return <div className="wallet-loading">Загрузка...</div>;
 

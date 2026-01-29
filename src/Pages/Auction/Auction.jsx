@@ -6,7 +6,7 @@ import { socket } from "../../Socket/socket.js";
 import { getAccessToken, refreshAccessToken, logout } from "../../auth/tokenService.js";
 
 import { getStandings } from "../../Modules/auction/auction.logic.js";
-
+import { useCallback } from "react";
 import AuctionStage from "../../Modules/auction/components/AuctionStage/AuctionStage.jsx";
 import Leaders from "../../Modules/auction/components/LiveLeader/LiveLeaderBoard.jsx";
 import BidPanel from "../../Modules/auction/components/BidePanel/BidePanel.jsx";
@@ -26,10 +26,10 @@ const Auction = () => {
 
   const refreshingRef = useRef(false);
 
-  const reloadAuction = async () => {
-    const res = await getAuctionById(id);
-    setAuction(res.data ?? res);
-  };
+  const reloadAuction = useCallback(async () => {
+  const res = await getAuctionById(id);
+  setAuction(res.data ?? res);
+}, [id]);
 
   /* ========= load auction ========= */
   useEffect(() => {
@@ -47,26 +47,25 @@ const Auction = () => {
   }, [id]);
 
   /* ========= socket ========= */
-  useEffect(() => {
-    if (!id) return;
-    const token = getAccessToken();
-    if (!token) return;
+ useEffect(() => {
+  if (!id) return;
+  const token = getAccessToken();
+  if (!token) return;
 
-    socket.auth = { token };
-    socket.connect();
-    socket.emit("join-auction", id);
+  socket.auth = { token };
+  socket.connect();
+  socket.emit("join-auction", id);
 
-    const reload = () => reloadAuction().catch(() => {});
+  socket.on("auction:bid", reloadAuction);
+  socket.on("auction:end", reloadAuction);
 
-    socket.on("auction:bid", reload);
-    socket.on("auction:end", reload);
+  return () => {
+    socket.off("auction:bid", reloadAuction);
+    socket.off("auction:end", reloadAuction);
+    socket.disconnect();
+  };
+}, [id, reloadAuction]);
 
-    return () => {
-      socket.off("auction:bid", reload);
-      socket.off("auction:end", reload);
-      socket.disconnect();
-    };
-  }, [id]);
 
   /* ========= token refresh ========= */
   useEffect(() => {
