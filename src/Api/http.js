@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAccessToken } from "../auth/tokenService";
 
 export const http = axios.create({
-  baseURL: "http://localhost:4000", 
+  baseURL: "https://auctionserver-mkty.onrender.com", 
   withCredentials: true,
 });
 
